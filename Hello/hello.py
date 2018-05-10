@@ -23,12 +23,17 @@ monTuple =(1,2,3,4)
 newList=list(monTuple)
 newList[3]=5
 
+
+#list
 print(newList) # list: [1,2,3,4]
 newTuple = tuple(newList)
+
+#tuple
 print(newTuple)  # tuple (1,2,3,4)
 
-print(monTuple)
-
+#dictionary
+monDic={"k1":"fulano", "k2": 33, 3:"bla bla"}
+print(monDic)
 
 print ('Interest calculator')
 amount = float(input('Principal amount?'))
