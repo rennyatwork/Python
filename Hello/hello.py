@@ -35,6 +35,25 @@ print(newTuple)  # tuple (1,2,3,4)
 monDic={"k1":"fulano", "k2": 33, 3:"bla bla"}
 print(monDic)
 
+
+# for loop
+for x in range (0,3):
+    print(x)
+
+for name in monDic:
+    print(name)
+
+# ERROR: not iterable
+# for val in monDic.values:
+#     print(val)
+
+#function
+def add_values(v1, v2):
+    return (v1+v2)
+
+
+print(add_values(1,3))
+
 print ('Interest calculator')
 amount = float(input('Principal amount?'))
 roi = float(input('Rate of interest?'))
