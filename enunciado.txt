@@ -1,0 +1,8 @@
+Simulate banking system
+
+Give prompt asking they wish create new savings accout or access and existing one
+
+if the user would like to create new accout, accept their name and initial deposit
+, create a 5-digit random number and make it as the account number
+
+If they are accessing an existing accout, accept their name and account number to validate the user, give them options to withdraw, deposit or display their available balance
