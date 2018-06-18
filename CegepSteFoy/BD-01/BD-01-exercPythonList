@@ -1,0 +1,32 @@
+Ecrire votre code Python qui prend en entrée une liste de n entiers et trouve l'emplacement du dernier entier pair dans la liste ou retourne -1 s'il n'y a pas d'entiers pairs dans la liste.
+
+def findLastOdd(listInt):
+  listInt = listInt[::-1];
+  for index, i in enumerate(listInt):
+    #print(index, i)
+    print ("listInt[i]: " +str(listInt[index]))
+    
+    x = listInt[index]
+    if (not isinstance(x, int)):
+      print ("Not an integer: " + str(x))
+      continue;
+
+    try:
+      x= int(listInt[index])
+    except:
+      print ("Not a number: " + str(listInt[index]))
+      continue;
+    if (i % 2 == 0):
+      print("pos: " +str(len(listInt)-1 - index))
+      print("val: "+ str(listInt[index]))
+      return len(listInt)-1 - index
+  
+  return -1
+
+
+x= findLastOdd([1,2,3,4,5, 10])
+print (x)
+
+
+x= findLastOdd([1,2,3,4,5, 10, "abc", [2,3], 33.22])
+print (x)

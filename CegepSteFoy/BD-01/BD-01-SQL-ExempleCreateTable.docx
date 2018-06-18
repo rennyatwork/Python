@@ -1,0 +1,44 @@
+/*
+From https://docs.oracle.com/javadb/10.8.3.0/ref/rrefsqlj13590.html#rrefsqlj13590:
+
+NOT NULL:
+Specifies that this column cannot hold NULL values (constraints of this type are not nameable).
+
+PRIMARY KEY:
+
+Specifies the column that uniquely identifies a row in the table. The identified columns must be defined as NOT NULL.
+
+**/
+
+create table MEDECIN
+(
+ numRPPS int not null
+ ,  nomM varchar(50)
+, prenomM varchar(50) not null
+, specialite varchar (100) not null
+, ville varchar(100)
+, adresse varchar (50)
+, constraint PK_Medecin primary key (numRPPS)
+, constraint chk_medecin_spec  check (specialite in ('Médecine Générale', 'Chirurgie', 'Pédiatrie', 'Psychiatrie', 'Radiologie'))
+)
+;
+
+
+/*
+exemple PK multi-column
+FOREIGN KEY
+CHECK
+*/
+create table LIGNEORDONNANCE
+(
+ numOrd int not null
+ ,  idMed int not null
+, nbBoites int default 0
+, constraint PK_ligneOrd primary key(numOrd, idMed)
+, constraint chk_ligneOrd_nbBoites check (nbBoites >0)
+, constraint fk_ligneOrdNumOrd foreign key (numOrd) references Ordonnance
+, constraint fk_ligneOrdMed foreign key (idMed) references Medecin
+)
+;
+
+

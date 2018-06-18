@@ -1,0 +1,32 @@
+### inheritance example
+
+
+
+class Etudiant(object):
+  def __init__(self, pNom, pPrenom, pNumero, pProgramme):
+    self.nom = pNom
+    self.prenom = pPrenom
+    self.numero = pNumero
+    self.programme = pProgramme
+
+  def Print(self):
+    print ("Nom: " + self.nom)
+    print ("PreNom: " + self.prenom)
+    print ("Numero: "+ self.numero)
+    print ("Programme: "+ self.programme)
+
+class Diplome(Etudiant):
+  def __init__(self, pDateDiplomation, pNom, pPrenom, pNumero, pProgramme):
+    super(Diplome, self).__init__(pNom, pPrenom, pNumero, pProgramme)    
+    self.dateDiplomation = pDateDiplomation
+  
+  def Print(self):
+    super().Print()
+    print("Date diplomation: ", self.dateDiplomation)
+
+
+etudiant = Etudiant("nom", "prenom", "abc123", "prog01")
+etudiant.Print()
+
+dipl = Diplome("date dipl","nome02", "prenom02", "aaa234", "prog02")
+dipl.Print()

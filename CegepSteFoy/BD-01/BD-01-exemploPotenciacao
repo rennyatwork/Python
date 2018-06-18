@@ -1,0 +1,29 @@
+
+def powerN(nbReel, nbInt):
+  
+  if(nbInt <0):
+    return 1/powerN(nbReel, -1*nbInt)
+  
+  
+  result =nbReel
+  if (not isinstance(nbReel, float)):
+    print("Error: first argument must be real")
+    return
+  if (not isinstance(nbInt, int)):
+    print ("Error: second argument must be integer")
+    return
+  if(nbInt == 0):
+    return 1
+  if(nbInt ==1):
+    return nbReel
+  
+  for i in range(nbInt-1):
+    result = result*nbReel
+  
+  
+  return result
+
+x= powerN(2., -2)
+print ("x = " + str(x))
+  
+
